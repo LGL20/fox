@@ -22,11 +22,11 @@ Scan
 EndScan
 *for i=1 to m.n
 *	if done[m.i]
-*		lin=m.lin+'Å'+Repl('Ä', l[m.i])
+*		lin=m.lin+'Ã…'+Repl('Ã„', l[m.i])
 *		if t[i]
 *			l[i]='@z '+Repl('9', Max(0, l[i])-1-m.deci)+'.'+Repl('9', m.deci)
 *		endif
 *	endif
 *endfor
-lin=Stuff(m.lin, 1, 1, 'Ã')+'´'
+lin=Stuff(m.lin, 1, 1, 'Ãƒ')+'Â´'
 LenAll=Len(m.lin)

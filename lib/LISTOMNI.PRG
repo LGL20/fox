@@ -1,4 +1,4 @@
-* ÇÎßÎ¢†ÓÈ†Ô Ø‡Æ£‡†¨¨† §Æ´¶≠† ®¨•‚Ï:
+* –í—ã–∑—ã–≤–∞—é—â–∞—è –ø—Ä–æ–≥—Ä–∞–º–º–∞ –¥–æ–ª–∂–Ω–∞ –∏–º–µ—Ç—å:
 * Func no_empty
 * Proc ListBody
 * Proc paint
@@ -24,7 +24,7 @@ else
 endif
 sele=Select()
 beginL=0
-On ReadError qqqqqqq=0	&& ≠®Á•£Æ ≠• §•´†‚Ï ·¨. ClrR
+On ReadError qqqqqqq=0	&& –Ω–∏—á–µ–≥–æ –Ω–µ –¥–µ–ª–∞—Ç—å —Å–º. ClrR
 Do While .t.
 	if &parent=m.flt
 		Scatter Memvar
@@ -149,7 +149,7 @@ Private top, bottom, right
 		@ m.bottom,  m.right Say '' Color W+/N
 	else
 		@ m.top, m.right to m.bottom, m.right Color n/bg
-		@ m.top, m.right Say '¥' Color n/bg
-		@ m.bottom,  m.right Say 'µ' Color n/bg
+		@ m.top, m.right Say '‚î§' Color n/bg
+		@ m.bottom,  m.right Say '‚ï°' Color n/bg
 	endif
 Return

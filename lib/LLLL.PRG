@@ -4,9 +4,9 @@ n=aLen(e)
 v=3
 Declare e[n], b[n], s[m.v,2]
 Store 1 to o, m, s
-s[1,1]='≥'
-s[2,1]='›'
-s[3,1]='∞'
+s[1,1]='¬≥'
+s[2,1]='√ù'
+s[3,1]='¬∞'
 do while m<Len(e)
 	Store 0 to m, PosSep
 	sep=1
@@ -41,11 +41,11 @@ n=Len(e)
 lin=''
 for i=1 to n
 	x=Subst(e, m.i, 1)
-	lin=m.lin+iif(m.x='≥', '≈', iif(At(m.x, '›∞')=0, 'ƒ', m.x))
+	lin=m.lin+iif(m.x='¬≥', '√Ö', iif(At(m.x, '√ù¬∞')=0, '√Ñ', m.x))
 endfor
-if m.lin='≈'
-	lin=Stuff(m.lin, 1, 1, '√')
+if m.lin='√Ö'
+	lin=Stuff(m.lin, 1, 1, '√É')
 endif
-if Right(m.lin, 1)='≈'
-	lin=Left(m.lin, Len(m.lin)-1)+'¥'
+if Right(m.lin, 1)='√Ö'
+	lin=Left(m.lin, Len(m.lin)-1)+'¬¥'
 endif

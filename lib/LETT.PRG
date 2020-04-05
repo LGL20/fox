@@ -7,7 +7,7 @@ Do defa with m.param, ''
 Do defa with m.ed, 0
 x=m.rr
 x=Int(m.x)
-s=iif(m.x=0 and m.null, 'ноль', '')
+s=iif(m.x=0 and m.null, '┬н┬о┬л├м', '')
 if Empty(m.ed)
 	ed=''
 else
@@ -37,26 +37,26 @@ Do While m.x>=1
 	i=m.x%10
 	x=Int(m.x/10)
 	j=m.w%3
-	n=iif(m.i=0, '', iif(m.i=1, 'один', iif(m.i=2, 'две',;
-		iif(m.i=3, 'три', iif(m.i=4, 'четыр', iif(m.i=5, 'пят',;
-		iif(m.i=6, 'шест', iif(m.i=7, 'сем',;
-		iif(m.i=8, 'восем', 'девят')))))))))
+	n=iif(m.i=0, '', iif(m.i=1, '┬о┬д┬и┬н', iif(m.i=2, '┬д┬в┬е',;
+		iif(m.i=3, '├в├а┬и', iif(m.i=4, '├з┬е├в├л├а', iif(m.i=5, '┬п├п├в',;
+		iif(m.i=6, '├и┬е├б├в', iif(m.i=7, '├б┬е┬м',;
+		iif(m.i=8, '┬в┬о├б┬е┬м', '┬д┬е┬в├п├в')))))))))
 	Do Case
 	Case m.j=0
 		q=m.n
-		n=iif(m.w=3, 'тысяч'+iif(m.i=1, 'а', ''),;
-			iif(m.w=6, 'миллион', iif(m.w=9, 'миллиард', '')))
+		n=iif(m.w=3, '├в├л├б├п├з'+iif(m.i=1, '┬а', ''),;
+			iif(m.w=6, '┬м┬и┬л┬л┬и┬о┬н', iif(m.w=9, '┬м┬и┬л┬л┬и┬а├а┬д', '')))
 	Case m.j=2
-		n=iif(m.i=1, 'сто', m.n+iif(m.i=2, 'сти', iif(m.i<5, 'ста', 'ьсот')))
+		n=iif(m.i=1, '├б├в┬о', m.n+iif(m.i=2, '├б├в┬и', iif(m.i<5, '├б├в┬а', '├м├б┬о├в')))
 	Case m.i=1
-		n=iif(''=m.q, 'десять', m.q+'надцать')
+		n=iif(''=m.q, '┬д┬е├б├п├в├м', m.q+'┬н┬а┬д├ж┬а├в├м')
 	Otherwise
-		n=iif(m.i=0, '', iif(m.i=2, 'двадцать', iif(m.i=3, 'тридцать',;
-			iif(m.i=4, 'сорок', iif(m.i=9, 'девяносто',	m.n+'ьдесят')))))
-		n=m.n+' '+iif(m.k>2, m.q+iif(m.k=3, '', iif(m.k=4, 'е', 'ь')),;
-			iif(m.k=2 and m.gender#2, 'два',;
+		n=iif(m.i=0, '', iif(m.i=2, '┬д┬в┬а┬д├ж┬а├в├м', iif(m.i=3, '├в├а┬и┬д├ж┬а├в├м',;
+			iif(m.i=4, '├б┬о├а┬о┬к', iif(m.i=9, '┬д┬е┬в├п┬н┬о├б├в┬о',	m.n+'├м┬д┬е├б├п├в')))))
+		n=m.n+' '+iif(m.k>2, m.q+iif(m.k=3, '', iif(m.k=4, '┬е', '├м')),;
+			iif(m.k=2 and m.gender#2, '┬д┬в┬а',;
 			iif(m.k=1 and (m.w=3 or (m.w=1 and m.gender=2)),;
-			'одна', m.q)))
+			'┬о┬д┬н┬а', m.q)))
 	EndCase
 	w=m.w+1
 	k=m.i

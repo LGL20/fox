@@ -1,0 +1,2 @@
+m.MARK=SET('mark')
+RETURN IIF(LEN(M.MARK)=0,'.',M.MARK)

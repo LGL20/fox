@@ -10,7 +10,7 @@ pos=1
 J=0
 r=' ,.-'
 S=''
-tr=CHR(13)+'›ﬁ|'
+tr=CHR(13)+'‚ñå‚ñê|'
 DO WHILE m.pos+1<=m.size
 	J=m.J+1
 	Declare n[m.j]

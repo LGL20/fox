@@ -6,49 +6,49 @@ if m.rod
 endif
 noKop = Empty(m.kop_name)
 if Type('m.rod')#"C"
-	rod=iif(m.ed='£‡', '¶', '')
+	rod=iif(m.ed='–≥—Ä', '–∂', '')
 endif
 DIMENSION N(9), C(6)
-N(1)='Æ§®≠'
-N(2)='§¢†'
-N(3)='‚‡®'
+N(1)='–æ–¥–∏–Ω'
+N(2)='–¥–≤–∞'
+N(3)='—Ç—Ä–∏'
 IF m.UKR
-	N(4)='ÁÆ‚®‡®'
-	N(5)="Ø'Ô‚Ï"
-	N(6)='Ëi·‚Ï'
-	N(7)='·i¨'
-	N(8)='¢i·i¨'
-	N(9)="§•¢'Ô‚Ï"
-	TEN='≠†§ÊÔ‚Ï '
+	N(4)='—á–æ—Ç–∏—Ä–∏'
+	N(5)="–ø'—è—Ç—å"
+	N(6)='—ài—Å—Ç—å'
+	N(7)='—Åi–º'
+	N(8)='–≤i—Åi–º'
+	N(9)="–¥–µ–≤'—è—Ç—å"
+	TEN='–Ω–∞–¥—Ü—è—Ç—å '
 	lg='i'
 ELSE
-	N(4)='Á•‚Î‡•'
-	N(5)='ØÔ‚Ï'
-	N(6)='Ë•·‚Ï'
-	N(7)='·•¨Ï'
-	N(8)='¢Æ·•¨Ï'
-	N(9)='§•¢Ô‚Ï'
-	TEN='≠†§Ê†‚Ï '
-	lg='•'
+	N(4)='—á–µ—Ç—ã—Ä–µ'
+	N(5)='–ø—è—Ç—å'
+	N(6)='—à–µ—Å—Ç—å'
+	N(7)='—Å–µ–º—å'
+	N(8)='–≤–æ—Å–µ–º—å'
+	N(9)='–¥–µ–≤—è—Ç—å'
+	TEN='–Ω–∞–¥—Ü–∞—Ç—å '
+	lg='–µ'
 ENDIF
 STORE '' TO C
 IF m.FULL
 	IF m.UKR
-		C(2)='‚®·ÔÁ'
-		C(3)='¨i´iÆ≠'
-		C(4)='¨i´i†‡§'
+		C(2)='—Ç–∏—Å—è—á'
+		C(3)='–ºi–ªi–æ–Ω'
+		C(4)='–ºi–ªi–∞—Ä–¥'
 	ELSE
-		C(2)='‚Î·ÔÁ'
-		C(3)='¨®´´®Æ≠'
-		C(4)='¨®´´®†‡§'
+		C(2)='—Ç—ã—Å—è—á'
+		C(3)='–º–∏–ª–ª–∏–æ–Ω'
+		C(4)='–º–∏–ª–ª–∏–∞—Ä–¥'
 	ENDIF
 ELSE
-	C(2)='‚Î·.'
-	C(3)='¨´≠.'
-	C(4)='¨´‡§.'
+	C(2)='—Ç—ã—Å.'
+	C(3)='–º–ª–Ω.'
+	C(4)='–º–ª—Ä–¥.'
 ENDIF
 DECI=INT((m.R-INT(m.R))*100)
-m=iif(Int(r)=0 and !m.nul, '≠Æ´Ï', '')
+m=iif(Int(r)=0 and !m.nul, '–Ω–æ–ª—å', '')
 R=LTRIM(STR(INT(m.R),100))
 L=CEILING(LEN(m.R)/3)*3
 R=PADL(m.R,m.L)
@@ -60,29 +60,29 @@ FOR m.I=m.L-2 TO 1 STEP -3
 	CASE m.w=0
 		S=''
 	CASE m.w=1
-		S='·‚Æ '
+		S='—Å—Ç–æ '
 	CASE m.w=2
-		S=IIF(UKR,'§¢i·‚i ','§¢•·‚® ')
+		S=IIF(UKR,'–¥–≤i—Å—Çi ','–¥–≤–µ—Å—Ç–∏ ')
 	CASE m.w=3.OR.m.w=4
-		S=N(m.w)+'·‚† '
+		S=N(m.w)+'—Å—Ç–∞ '
 	OTHERWISE
 		S=N(m.w)
 		if m.ukr and m.w#7 and m.w#8
 			s=Left(m.s, Len(m.s)-1)
 		endif
-		s=m.s+'·Æ‚ '
+		s=m.s+'—Å–æ—Ç '
 	ENDCASE
 	T=VAL(SUBSTR(m.G,2,1))
 	q=VAL(SUBSTR(m.G,3,1))
 	if m.T=1
 		if m.q=0
-			S=m.S+'§•·Ô‚'+iif(m.w<2, 'Ï','')+' '
+			S=m.S+'–¥–µ—Å—è—Ç'+iif(m.w<2, '—å','')+' '
 		else
 			Do Case
 			CASE m.q=1
-				S=m.S+'Æ§®≠'+IIF(UKR,'','≠')
+				S=m.S+'–æ–¥–∏–Ω'+IIF(UKR,'','–Ω')
 			CASE m.q=2
-				S=m.S+'§¢'+IIF(UKR,'†','•')
+				S=m.S+'–¥–≤'+IIF(UKR,'–∞','–µ')
 			CASE m.q=3 or m.q=8
 				S=m.S+n[q]
 			OTHERWISE
@@ -96,16 +96,16 @@ FOR m.I=m.L-2 TO 1 STEP -3
 		CASE m.T=2.OR.m.T=3
 			S=m.S+N(m.T)+RIGHT(m.TEN,6)
 		CASE m.T=4
-			S=m.S+'·Æ‡Æ™ '
+			S=m.S+'—Å–æ—Ä–æ–∫ '
 		CASE m.T=9
-			S=m.S+'§•¢'+IIF(UKR,"'",'')+'Ô≠Æ·‚Æ '
+			S=m.S+'–¥–µ–≤'+IIF(UKR,"'",'')+'—è–Ω–æ—Å—Ç–æ '
 		OTHERWISE
-			S=m.S+N(m.T)+'§•·Ô‚ '
+			S=m.S+N(m.T)+'–¥–µ—Å—è—Ç '
 		ENDCASE
 		DO CASE
 		CASE m.q=0
-		CASE m.q<3 and (m.F=2.OR.(m.F=1 and (m.ROD='¶' or m.rod='Ò')))
-			S=m.S+iif(m.q=1, 'Æ§≠'+iif(m.ROD='¶', '†', 'Æ'), '§¢'+m.lg)+' '
+		CASE m.q<3 and (m.F=2.OR.(m.F=1 and (m.ROD='–∂' or m.rod='—ë–Å')))
+			S=m.S+iif(m.q=1, '–æ–¥–Ω'+iif(m.ROD='–∂', '–∞', '–æ'), '–¥–≤'+m.lg)+' '
 		OTHERWISE
 			S=m.S+N(m.q)+' '
 		ENDCASE
@@ -114,9 +114,9 @@ FOR m.I=m.L-2 TO 1 STEP -3
 		G=''
 		IF FULL
 			IF m.F=2
-				g=iif(m.q=1 and m.t#1, '†', iif(BETWEEN(m.q,2,4), '®', ''))
+				g=iif(m.q=1 and m.t#1, '–∞', iif(BETWEEN(m.q,2,4), '–∏', ''))
 			ELSE
-				G=IIF(m.q=1.OR.m.F=1,'',IIF(m.q=3.OR.m.q=4,'†',IIF(UKR,'i','Æ')+'¢'))
+				G=IIF(m.q=1.OR.m.F=1,'',IIF(m.q=3.OR.m.q=4,'–∞',IIF(UKR,'i','–æ')+'–≤'))
 			ENDIF
 		ENDIF
 		g=c[f]+m.G
@@ -125,22 +125,22 @@ FOR m.I=m.L-2 TO 1 STEP -3
 	if m.f=1
 		DO CASE
 		Case m.EdFirst
-		CASE m.q=1 and m.rod='¶' and m.t#1
+		CASE m.q=1 and m.rod='–∂' and m.t#1
 			Do case
-			Case m.ed='£‡®¢•≠Ï'
-				ed='£‡®¢≠Ô'
-			Case m.ed='™ÆØ••™'
-				ed='™ÆØ'+m.lg+'©™†'
+			Case m.ed='–≥—Ä–∏–≤–µ–Ω—å'
+				ed='–≥—Ä–∏–≤–Ω—è'
+			Case m.ed='–∫–æ–ø–µ–µ–∫'
+				ed='–∫–æ–ø'+m.lg+'–π–∫–∞'
 			ENDCase
-		CASE m.t#1 and (m.q=3 or m.q=4 or (m.q=2 and m.rod='¶'))
+		CASE m.t#1 and (m.q=3 or m.q=4 or (m.q=2 and m.rod='–∂'))
 			Do Case
-			Case m.ed='™ÆØ••™'
-				ed='™ÆØ'+m.lg+'©™®'
-			Case m.ed='£‡®¢•≠Ï'
-				ed='£‡®¢≠i'
+			Case m.ed='–∫–æ–ø–µ–µ–∫'
+				ed='–∫–æ–ø'+m.lg+'–π–∫–∏'
+			Case m.ed='–≥—Ä–∏–≤–µ–Ω—å'
+				ed='–≥—Ä–∏–≤–Ωi'
 			ENDCase
-		Case m.ed='£‡®¢≠i'
-			ed='£‡®¢•≠Ï'
+		Case m.ed='–≥—Ä–∏–≤–Ωi'
+			ed='–≥—Ä–∏–≤–µ–Ω—å'
 		ENDCASE
 	endif
 ENDFOR
@@ -158,19 +158,19 @@ if Type('m.kop')="C"
 endif
 IF m.DECI#0.OR.(m.KOP and ''#m.m)
 	r=MOD(m.DECI,10)
-	Do defa with m.kop_name, '™ÆØ'+iif(m.ukr, 'i','•')+'©™®'
+	Do defa with m.kop_name, '–∫–æ–ø'+iif(m.ukr, 'i','–µ')+'–π–∫–∏'
 	kop=iif(m.r=4, m.kop_name, iif(m.ukr, ukrod(m.kop_name), rod(m.kop_name)))
 	Do Case m.r=1
 		Do Case
-		Case m.kop='™ÆØ••™'
-			KOP='™ÆØ•©™†'
-		Case m.kop='™ÆØi©Æ™'
-			KOP='™ÆØi©™†'
-		Case m.kop='¨†‡Æ™'
-			KOP='¨†‡™†'
+		Case m.kop='–∫–æ–ø–µ–µ–∫'
+			KOP='–∫–æ–ø–µ–π–∫–∞'
+		Case m.kop='–∫–æ–øi–π–æ–∫'
+			KOP='–∫–æ–øi–π–∫–∞'
+		Case m.kop='–º–∞—Ä–æ–∫'
+			KOP='–º–∞—Ä–∫–∞'
 		ENDCase
-	Case m.r=2 and m.kop='™ÆØi©Æ™'
-		kop='™ÆØi©™®'
+	Case m.r=2 and m.kop='–∫–æ–øi–π–æ–∫'
+		kop='–∫–æ–øi–π–∫–∏'
 	EndCase
 	DECI=TRANSFORM(m.DECI,'@l 99')
 	kop=win(m.kop)

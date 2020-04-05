@@ -3,9 +3,9 @@ Private i, p, m, o, x, SepNow, sep, s, v
 v=3
 Declare s[m.v,2]
 Store 1 to o, s
-s[1,1]='³'
-s[2,1]='İ'
-s[3,1]='°'
+s[1,1]='Â³'
+s[2,1]='Ã'
+s[3,1]='Â°'
 do while .t.
 	Go Top
 	m=0
@@ -44,11 +44,11 @@ lin=''
 n=Len(tx)
 for i=1 to n
 	x=Subst(tx, m.i, 1)
-	lin=m.lin+iif(m.x='³', 'Å', iif(At(m.x, 'İ°')=0, 'Ä', m.x))
+	lin=m.lin+iif(m.x='Â³', 'Ã…', iif(At(m.x, 'ÃÂ°')=0, 'Ã„', m.x))
 endfor
-if m.lin='Å'
-	lin=Stuff(m.lin, 1, 1, 'Ã')
+if m.lin='Ã…'
+	lin=Stuff(m.lin, 1, 1, 'Ãƒ')
 endif
-if Right(m.lin, 1)='Å'
-	lin=Left(m.lin, Len(m.lin)-1)+'´'
+if Right(m.lin, 1)='Ã…'
+	lin=Left(m.lin, Len(m.lin)-1)+'Â´'
 endif

@@ -1,0 +1,1 @@
+Return iif(tables.name=' ', tables.alias, fromwin(tables.name))

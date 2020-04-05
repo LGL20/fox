@@ -1,0 +1,22 @@
+PARAMETERS LEN, DECI
+PRIVATE L, R
+IF EMPTY(M->DECI)
+   IF TYPEAHEAD('rnd')='U'
+      IF FILES('rnd.mem')
+         RESTORE FROM rnd ADDITIVE
+      ELSE
+         RND = 0
+      ENDIF
+   ENDIF
+   DECI = M->RND
+ENDIF
+DECI = MAX(M->DECI,0)
+L = M->LEN-IIF(EMPTY(M->DECI),0,M->DECI+1)
+R = REPLICATE('9',M->L)
+PRIVATE I
+FOR I = M->L-2 TO 2 STEP -3
+   R = STUFF(R,I,0,',')
+ENDFOR
+RETURN '@z '+R+IIF(EMPTY(M->DECI),'','.'+REPLICATE('9',M->DECI))
+
+

@@ -1,0 +1,55 @@
+PARAMETERS TXT, OK, OKUP, title
+PRIVATE R, I, P, C, COLOR, gentle
+PUSH KEY CLEAR
+do defa with m.title, ''
+*if ''#m.title
+*	title = ' '+m.title+' '
+*endif
+OK=IIF(EMPTY(M.OK),' Ok ',' '+ALLTRIM(M.OK)+' ')
+DO DEFA WITH TXT, ''
+COLOR=''
+gentle=.f.
+DO KEYPAR WITH M.TXT
+if ''=m.color and m.gentle
+	color='n/w,w+/b,w+/r'
+else
+	DO DEFA WITH M.COLOR, 'gr+/GR+,w+/b,W+/GR+'
+endif
+color = m.color+',gr+/n'
+PRIVATE ALL LIKE l*
+LP=LEN(OK)
+LT=MIN(LEN(TXT),76)
+LET=1
+Declare LTEXT(1)
+DO LINES WITH TXT+'\trim', M.LT, LTEXT, LET
+Declare LTEXT(LET)
+LT=0
+FOR I=1 TO LET
+	LTEXT(I)=ALLTRIM(LTEXT(I))
+	LT=MAX(M.LT,LEN(LTEXT(I)))
+ENDFOR
+L=MAX(M.LT,LP+4)
+C=SCHM(M.COLOR,3)
+DEFINE WINDOW OK FROM INT((SROWS()-LET-3)/2), INT((SCOLS()-L)/2)-2 TO INT((SROWS()+LET+3)/2), INT((SCOLS()+L)/2)+2 SHADOW;
+	COLOR (m.color) Title m.title
+ACTIVATE WINDOW NOSHOW OK
+C=SCHM(M.COLOR,1)
+P=SCHM(M.COLOR,2)
+IF M.OKUP
+	@ 0, INT((WCOLS()-LP)/2) SAY OK COLOR (M.P)
+	FOR I=2 TO LET
+		@ M.I-1, INT((WCOLS()-M.LT)/2) SAY PADC(LTEXT(I),M.LT) COLOR (M.C)
+	ENDFOR
+ELSE
+	FOR I=1 TO LET
+		@ M.I-1, INT((WCOLS()-M.LT)/2) SAY PADC(LTEXT(I),M.LT) COLOR (M.C)
+	ENDFOR
+	@ M.I, INT((WCOLS()-LP)/2) SAY OK COLOR (M.P)
+ENDIF
+WAIT CLEAR
+ACTIVATE WINDOW SAME OK
+DO WHILE .NOT.INLIST(INKEY(0,'hm'),27,13,151)
+ENDDO
+RELEASE WINDOW OK
+POP KEY
+RETURN LASTKEY()#27

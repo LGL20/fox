@@ -9,4 +9,4 @@ else
 endif
 Locate For base=m.base
 area=area
-Return errorif(m.area<=0, 'Îáëàñòü äëÿ òàáëèöû '+m.base+' íå íàéäåíà')
+Return errorif(m.area<=0, 'ÃÃ¡Ã«Å•Å„ÅˆÃ¼ Ã¤Ã«Ë™ ÅˆÅ•Ã¡Ã«ÄÃ¶Å± '+m.base+' Ã­Äº Ã­Å•Ã©Ã¤ÄºÃ­Å•')

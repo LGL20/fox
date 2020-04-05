@@ -9,7 +9,7 @@ if !Empty(m.path)
 	Set Default to &path
 	On Error
 endif	
-new=GetFile('dbf', 'Выберите путь к данным:')
+new=GetFile('dbf', 'тАЪ├л┬б┬е├а┬и├в┬е ┬п├г├в├м ┬к ┬д┬а┬н┬н├л┬м:')
 if ''#m.new
 	Store Left(m.new, Rat('\', m.new)) to (m.varr)
 endif

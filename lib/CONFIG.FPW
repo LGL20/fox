@@ -1,0 +1,12 @@
+SCREEN=OFF
+_BROWSER = ""
+_SPELLCHK = ""
+_GENMENU = ""
+_GENGRAPH = ""
+_GENXTAB = ""
+_COVERAGE = ""
+_SCCTEXT = ""
+_CONVERTER = ""
+_TRANSPORTER = ""
+_BUILDER = ""
+_WIZARD = ""

@@ -21,9 +21,9 @@ else
 	lock = who
 	Use foxuser.ini
 	Locate For kind = m.lock
-	MessageBox('Запись сейчас изменяет другой пользователь';
+	MessageBox('Г‡Г ГЇГЁГ±Гј Г±ГҐГ©Г·Г Г± ГЁГ§Г¬ГҐГ­ГїГҐГІ Г¤Г°ГіГЈГ®Г© ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гј';
 		+iif(Empty(name), '', chr(13)+'('+win(Trim(name))+')'),;
-		64,	'Общий доступ к данным')
+		64,	'ГЋГЎГ№ГЁГ© Г¤Г®Г±ГІГіГЇ ГЄ Г¤Г Г­Г­Г»Г¬')
 endif
 Use
 Select (m.sele)

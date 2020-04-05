@@ -2,7 +2,7 @@ Parameter field
 Private code
 Calculate to code Max(&field)
 if m.code=Int(Val(Replicate('9', fSize(m.field))))
-	=ok('Переполнение кода|Обратитесь к разработчику')
+	=ok('РџРµСЂРµРїРѕР»РЅРµРЅРёРµ РєРѕРґР°|РћР±СЂР°С‚РёС‚РµСЃСЊ Рє СЂР°Р·СЂР°Р±РѕС‚С‡РёРєСѓ')
 	Return 0
 endif
 Return m.code+1

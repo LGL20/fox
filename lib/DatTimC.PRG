@@ -1,0 +1,1 @@
+Return dat83(Date())+time83()
